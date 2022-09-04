@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTractor } from '@fortawesome/free-solid-svg-icons'
 import { IconoCarrito } from './carrito';
+import { Link } from 'react-router-dom';
+import '../assets/styles/item.css';
 
 
 export const Navegador = () => {
@@ -17,12 +19,24 @@ export const Navegador = () => {
       <Navbar bg="dark" variant="dark">
         <Container>
  
-          <Navbar.Brand href="#home"> <FontAwesomeIcon icon={faTractor} /> </Navbar.Brand>
-          <Navbar.Brand href="#home">AGRONLINE</Navbar.Brand>
+          <Navbar.Brand href="/"> <FontAwesomeIcon icon={faTractor} /> </Navbar.Brand>
+          <Navbar.Brand href="/">AGRONLINE</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Maquinas</Nav.Link>
-            <Nav.Link href="#pricing">Repuestos</Nav.Link>
+           
+            <Link className="btn btn-dark" to="/">
+                    Home
+                </Link>
+                <Link className="btn btn-dark" to="/productos/Tractores">
+                    Tractores
+                </Link>
+                <Link className="btn btn-dark" to="/productos/Cosechadoras">
+                    Cosechadoras
+                </Link>
+                <Link className="btn btn-dark" to="/productos/Sembradoras">
+                    Sembradoras
+                </Link>
+          
+           
 
 
           </Nav>
