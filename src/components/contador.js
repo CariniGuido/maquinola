@@ -1,13 +1,13 @@
-import { useState } from "react"
+
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 
 
 
 
-export const Contador = ({ stock }) => {
+export const Contador = ({ stock , counter, setCounter, handleAgregar}) => {
 
-    const [counter, setCounter] = useState(0);
+    
 
     const handleAdd = () => {
         if (counter < stock) {
@@ -37,9 +37,10 @@ export const Contador = ({ stock }) => {
             <hr />
 
             <Button onClick={handleSubstract} className="btn btn-outline-dark"> - </Button>
-            <Badge as="secondary"> {counter} </Badge>
+            <Badge className="mx-3"> {counter} </Badge>
             <Button onClick={handleAdd} className="btn btn-dark"> + </Button>
-            <button style={{}} disabled= {stock<0 } > Añadir al carrito</button>
+            <br></br>
+            <button onClick={handleAgregar} ClassName="btn btn-success my-2" disabled= {stock<0 } > Añadir al carrito</button>
 
 
 

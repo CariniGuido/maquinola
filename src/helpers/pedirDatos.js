@@ -7,7 +7,7 @@ export const pedirDatos = () => {
 
         setTimeout(() => {
 
-            resolve(stock)
+            resolve(stock) 
 
 
         }, 3000)
