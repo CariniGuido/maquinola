@@ -57,7 +57,11 @@ margin-left: 10px;
   min-width: 200vh;
 }
   
-  
+
+.icono
+ {
+   color: rgb(255, 255, 255);
+ } 
   
 
 
@@ -80,4 +84,11 @@ align-items: stretch;
   margin : auto;
   text-align: justify;
   align-content: space-between;
+}
+
+.imagenEnCarro {
+
+  height: 90px;
+  width: 90px;
+
 }

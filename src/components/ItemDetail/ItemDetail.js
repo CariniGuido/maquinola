@@ -5,32 +5,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Contador } from '../contador';
 import ListGroup from 'react-bootstrap/ListGroup';
 
+import { Link } from 'react-router-dom';
 
-
-import { stock } from '../../data/data';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../CartContext/CartContext';
 
 const ItemDetail = ({ Item }) => {
 
-  const [cantidad, setCantidad] = useState (0)
+  const { cart, addToCart, IsInCart } = useContext(CartContext)
+  const [cantidad, setCantidad] = useState(1)
   const handleAgregar = () => {
+    
     const agregarAlCarro = {
       id: Item.id,
       nombre: Item.nombre,
-      precio: Item.precio
-
+      precio: Item.precio,
+      cantidad,
+      imagen: Item.imagen
     }
 
 
 
-
-    console.log(agregarAlCarro)
-
+     
+    addToCart(agregarAlCarro)
+    console.log (IsInCart)
 
   }
   return (
-    <container className="col-4" >
-      <div className='container d-flex h-100'>
+    <container className=" container my-5">
+      <div className='container my-5'>
 
 
 
@@ -44,11 +47,9 @@ const ItemDetail = ({ Item }) => {
               <small className='StockTarjeta'>Stock disp: {Item.stock}</small>
               <p> {Item.precio}</p>
             </Card.Text>
-            <Contador
-              stock={Item.stock}
-              counter={cantidad}
-              setCounter={setCantidad}
-              handleAgregar={handleAgregar} />
+
+
+
             <small> {Item.descripcion} </small>
 
 
@@ -59,8 +60,21 @@ const ItemDetail = ({ Item }) => {
           <ListGroup.Item>Estado:{Item.estado}</ListGroup.Item>
           <ListGroup.Item>Año:{Item.año}</ListGroup.Item>
         </ListGroup>
-      </div>
+        { IsInCart(Item.id) ? 
+       
+       <Link to="/cart" className="btn btn-dark my-2
 
+       ">Finalizar Compra</Link>
+          
+          :<Contador
+            stock={Item.stock}
+            counter={cantidad}
+            setCounter={setCantidad}
+            handleAgregar={handleAgregar} />
+        }
+       
+      </div>
+     
     </container>
 
 

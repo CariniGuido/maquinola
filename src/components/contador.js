@@ -23,7 +23,7 @@ export const Contador = ({ stock , counter, setCounter, handleAgregar}) => {
 
 
     const handleSubstract = () => {
-        if (counter > 0) {
+        if (counter > 1) {
             setCounter(counter - 1)
         }
 
@@ -40,7 +40,7 @@ export const Contador = ({ stock , counter, setCounter, handleAgregar}) => {
             <Badge className="mx-3"> {counter} </Badge>
             <Button onClick={handleAdd} className="btn btn-dark"> + </Button>
             <br></br>
-            <button onClick={handleAgregar} ClassName="btn btn-success my-2" disabled= {stock<0 } > Añadir al carrito</button>
+            <button onClick={handleAgregar} ClassName="btn btn-success my-2" disabled= {stock<1 } > Añadir al carrito</button>
 
 
 
