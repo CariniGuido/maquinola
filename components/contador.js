@@ -31,7 +31,7 @@ export const Contador = ({ stock , counter, setCounter, handleAgregar}) => {
 
     return (
 
-        <div >
+        <div > 
             
 
             <hr />

@@ -8,11 +8,11 @@ import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = () => { 
-    const [loading, setLoading] = useState (true)
+    const [loading, setLoading] = useState (true)  
     const [productos, setProductos] = useState([])
 
     const { categoriaId } = useParams() 
-
+ 
     useEffect(() => {
         setLoading(true)
         pedirDatos()
