@@ -14,9 +14,8 @@ export const CartProvider = ({ children }) => {
 
         setCart([...cart, Item])
     }
- 
-   
-  const removeItem = (id) => {
+
+    const removeItem = (id) => {
    
         Swal.fire({
             title: 'Desea eliminar el producto del carrito?',
@@ -72,7 +71,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-       
+
         <CartContext.Provider value={{
             cart,
             addToCart,

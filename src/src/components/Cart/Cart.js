@@ -8,12 +8,11 @@ import '../../assets/styles/item.css'
 import {faTrash} from   '@fortawesome/free-solid-svg-icons'
 export const Cart = () => {
 
-    const { cart, precioFinal , vaciarCarrito, removeItem    } = useContext(CartContext)
+    const { cart, precioFinal , vaciarCarrito, removeItem } = useContext(CartContext)
 
 
     return (
-       
-       <div className="container my-5">
+        <div className="container my-5">
 
             <h2>
 
@@ -21,7 +20,7 @@ export const Cart = () => {
             </h2>
 
             <hr></hr>
-            
+
             {cart.map((Item) => (
 
                 <div key={Item.id}>
