@@ -4,7 +4,7 @@ import ItemList from "../ItemList/ItemList";
 
 import {HashLoader} from 'react-spinners'
 import '../../assets/styles/item.css'
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; 
 
 
 const ItemListContainer = () => { 
@@ -13,6 +13,9 @@ const ItemListContainer = () => {
 
     const { categoriaId } = useParams() 
  
+
+
+
     useEffect(() => {
         setLoading(true)
         pedirDatos()
